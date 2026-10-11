@@ -1,0 +1,19 @@
+
+.container {
+  text-align: center;
+  padding: 40px;
+}
+
+.btn {
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
