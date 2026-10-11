@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Substrings</title>
+</head>
+
+<body>
+
+Enter String:
+<input type="text" id="text">
+
+<button onclick="findSubstrings()">Generate</button>
+
+<p id="result"></p>
+
+<script>
+
+function findSubstrings(){
+
+let str=document.getElementById("text").value;
+
+let result="";
+
+for(let i=0;i<str.length;i++){
+
+for(let j=i+1;j<=str.length;j++){
+
+result+=str.substring(i,j)+", ";
+
+}
+
+}
+
+document.getElementById("result").innerHTML=
+result.slice(0,-2);
+
+}
+
+</script>
+</body>
+</html>

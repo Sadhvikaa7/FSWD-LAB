@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Non repeating characters</title>
+</head>
+
+<body>
+
+
+    enter text:
+    <input type="text" id="text">
+    <button onclick="nonRepeatingCharacters()">count</button>
+
+    <p id="result"></p>
+
+    <script>
+        function nonRepeatingCharacters() {
+
+
+            let u = document.getElementById("text").value;
+            let r = "";
+            
+            for(let i=0;i<u.length;i++){
+                let c=0
+                for (let j=0;j<u.length;j++){
+                    if(u[i]==u[j]){
+                        c++;
+                    }
+                }
+                if(c==1){
+                    
+                    r+=u[i]+"<br>";
+                }
+            }
+            document.getElementById("result").innerHTML =" non-repeating characters are: " + r;   
+        }
+
+    </script>
+
+</body>
+
+</html>

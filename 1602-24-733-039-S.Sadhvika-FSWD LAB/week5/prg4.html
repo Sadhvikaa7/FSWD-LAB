@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Order Tracking Async Await</title>
+</head>
+
+<body>
+
+    <button onclick="startOrder()">Start Order</button>
+
+    <p id="result"></p>
+
+    <script>
+
+      function task(msg){
+        return new Promise(function(resolve){
+            setTimeout(function(){
+                document.getElementById("result").innerHTML+=msg+"<br>";resolve();},1000)
+            });
+        }
+        async function startOrder(){
+            document.getElementById("result").innerHTML="";
+            await task("Order Placed");
+            await task("Order Shipped");
+            await task("Order Delivered");
+        }
+
+      
+        /*
+        async/await is easier to read because the code looks
+        like normal sequential code.
+        
+        .then() uses chained callbacks, while async/await
+        makes asynchronous code simpler and more readable.
+        */
+
+    </script>
+
+</body>
+
+</html>

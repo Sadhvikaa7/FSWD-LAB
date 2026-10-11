@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Move Image</title>
+<style>
+    #img{
+        position:absolute;
+        left:100px;
+        top:100px;
+        width:100px;
+    }
+</style>
+</head>
+
+<body>
+
+<img src="https://www.w3schools.com/html/pic_trulli.jpg" id="img">  
+
+<button onclick="moveLeft()">Move Left</button>
+<button onclick="moveRight()">Move Right</button>
+<button onclick="moveUp()">Move Up</button>
+<button onclick="moveDown()">Move Down</button>
+
+
+
+
+<script>
+let x=100;
+let y=100;
+function moveLeft(){
+    x=x-20;
+    document.getElementById("img").style.left=x+"px";
+}
+function moveRight(){
+    x=x+20;
+    document.getElementById("img").style.left=x+"px";
+}
+function moveUp(){
+    y=y-20;
+    document.getElementById("img").style.top=y+"px";
+}
+function moveDown(){
+    y=y+20;
+    document.getElementById("img").style.top=y+"px";
+}
+</script>
+
+</body>
+</html>

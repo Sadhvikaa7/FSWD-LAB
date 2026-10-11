@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>password validation</title>
+</head>
+
+<body>
+
+Enter Password:
+<input type="text" id="pass">
+
+<button onclick="validate()">validate</button>
+
+<p id="result"></p>
+
+<script>
+
+function validate(){
+
+let pass=document.getElementById("pass").value;
+
+if(pass==""){
+    alert("Please enter a password");
+    return;
+}
+p=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+if (p.test(pass)){
+    document.getElementById("result").innerHTML="Valid Password";
+}
+else{
+    document.getElementById("result").innerHTML="Invalid Password";
+
+}
+}
+
+
+</script>
+</body>
+</html>

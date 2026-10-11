@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>letter occurrence</title>
+</head>
+
+<body>
+
+
+    enter text:
+    <input type="text" id="text">
+    <button onclick="countLetters()">count</button>
+
+    <p id="result"></p>
+
+    <script>
+        function countLetters() {
+
+
+            let u = document.getElementById("text").value;
+            let count = {};
+            for (let ch of u) {
+                if (count[ch]) {
+                    count[ch]++;
+                }
+                else {
+                    count[ch] = 1;
+                }
+            }
+            let r = "";
+            for (let ch in count) {
+                r += ch + ":" +count[ch] + "<br>";
+            }
+            document.getElementById("result").innerHTML = r;
+        }
+
+    </script>
+
+</body>
+
+</html>

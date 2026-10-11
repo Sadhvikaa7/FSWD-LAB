@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Order Tracking</title>
+</head>
+
+<body>
+
+    <button onclick="startOrder()">Start Order</button>
+
+    <p id="result"></p>
+
+    <script>
+
+       function startOrder(){
+        document.getElementById("result").innerHTML="";
+        task("Order Placed")
+        .then(function(){
+            return task("Order shipped");
+        })
+        .then(function(){
+            return task("Order delivered");
+        });
+       }
+       function task(msg){
+        return new Promise(function(resolve){
+            setTimeout(function(){document.getElementById("result").innerHTML+=msg+"<br>";resolve();},1000)
+
+        });
+       }
+
+    </script>
+
+</body>
+
+</html>

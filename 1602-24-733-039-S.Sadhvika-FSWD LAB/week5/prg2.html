@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Callback Calculator</title>
+</head>
+
+<body>
+
+    Enter First Number:
+    <input type="number" id="num1">
+    <br><br>
+
+    Enter Second Number:
+    <input type="number" id="num2">
+    <br><br>
+
+    Enter Operator:
+    <input type="text" id="op" placeholder="+, -, *, /">
+    <br><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function add(a,b){
+            return a+b;
+        }
+        function sub(a,b){
+            return a-b;
+        }
+        function mult(a,b){
+            return a*b;
+        }
+        function div(a,b){
+            return a/b;
+        }
+        function calculate(){
+            let a=Number(document.getElementById("num1").value);
+            let b=Number(document.getElementById("num2").value);
+            let op=document.getElementById("op").value;
+            let r;
+            if(op=='+'){
+                result=operation(a,b,add);
+                
+            }
+            else if(op=='-'){
+                result=operation(a,b,sub);
+            }
+            else if(op=='*'){
+                result=operation(a,b,mult);
+            }
+            else if(op=='/'){
+                result=operation(a,b,div);
+            }
+            else{
+                alert("Invalid operator");
+            }
+            document.getElementById("result").innerHTML="Result: "+result;
+        }
+        function operation(a,b,callback){
+            return callback(a,b);
+        }
+
+   
+    </script>
+
+</body>
+
+</html>

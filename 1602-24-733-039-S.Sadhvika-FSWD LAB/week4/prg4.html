@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reverse Each Word</title>
+</head>
+
+<body>
+
+Enter Text:
+<input type="text" id="text">
+
+<button onclick="reverseWords()">reverse</button>
+
+<p id="result"></p>
+
+<script>
+
+function reverseWords(){
+
+let u=document.getElementById("text").value;
+
+let w=u.split(" ");
+let r=w.map(function(ws){
+    return ws.split("").reverse().join("");
+});
+document.getElementById("result").innerHTML=r.join(" ");
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Marks</title>
+</head>
+
+<body>
+
+    <button onclick="processMarks()">Show Results</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function processMarks() {
+
+            let students = [
+                { name: "A", marks: 35 },
+                { name: "B", marks: 78 },
+                { name: "C", marks: 42 },
+                { name: "D", marks: 90 }
+            ];
+
+            
+            let r="";
+            let m=students.map(s=>s.marks);
+            let t=m.reduce((s,v)=>s+v,0);
+            let avg=t/m.length;
+            let pas=students.filter(s=>s.marks>=40);
+            let names=pas.map(s=>s.name);
+            document.getElementById("result").innerHTML=
+                "Total Marks: "+t+"<br>"+
+                "Average Marks: "+avg+"<br>"+
+                "Passed Students: "+names.join(", ");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

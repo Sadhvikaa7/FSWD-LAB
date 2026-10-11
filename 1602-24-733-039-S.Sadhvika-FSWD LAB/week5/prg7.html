@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Traffic Light</title>
+    <style>
+        #light{
+            width:100px;
+            height:100px;
+            margin:2px;
+            background-color:grey;
+            border-radius:50%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+   <h1 id="msg">Traffic lights stopped</h1>
+   <div id="light"></div>
+   <button onclick="start()">Start</button>
+   <button onclick="stop()">Stop</button>
+<script>
+    let timer;
+    let run=false;
+    function changelight(color,msg,callback){
+        document.getElementById("light").style.backgroundColor=color;
+        document.getElementById("msg").innerHTML=msg;
+        timer=setTimeout(callback,2000);
+    }
+    function red(){
+        if(!run){return;}
+        changelight("red","Red-STOP",green);
+    }
+    function green(){
+        if(!run){return;}
+        changelight("green","Green-GO",yellow);
+    }
+    function yellow(){
+        if(!run){return;}
+        changelight("yellow","Yellow-WARN",red);
+    }
+    function start(){
+        if(run){return;}
+        run=true;
+        red();
+    }
+    function stop(){
+        run=fasle;
+        clearTimeout(timer);
+        document.getElementById("light").style.backgroundColor="grey";
+        document.getElementById("msg").innerHTML="Traffic lights stopped";      
+    }
+</script>
+</body>
+
+
+</html>
